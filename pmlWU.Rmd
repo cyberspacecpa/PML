@@ -1,5 +1,5 @@
 ---
-title: 'PML Course Project: Prediction Model Test'
+title: 'PML Course Project: Prediction Model'
 author: "cyberspacecpa"
 date: "Sunday, October 26, 2014"
 output:
@@ -16,10 +16,10 @@ Six young health participants were asked to perform one set of 10 repetitions of
 4. lowering the dumbbell only halfway (Class D)
 5. throwing the hips to the front (Class E).
 
-Class A corresponds to the specified execution of the exercise, while the other 4 classes correspond to common mistakes. 
+Class A corresponds to the specified execution of the exercise; the other 4 classes correspond to common mistakes. 
 
 **Project Goal:** To use data from the accelerometers on the belt, forearm, arm, and dumbbell of the 6 partipants to build an optimal model that predicts the classification
-(A-E) of how well (i.e., correctly or incorrectly) the participants lift weights.
+(A-E) of how well the participants lift weights.
 
 **Project Stategy:** Build the model using the standard model building methodology
 
@@ -130,7 +130,7 @@ Seventy percent of training data proved to be the most optimal; that is, when se
 **--Evaluation:** To test the robustness of the accuracy of the final random forest model's predictions, I manipulated both of the sensitive parameters: ntree and p. The results are shown in the Accuracy Tables below (see discussion on the expected error). The optimal level is when ntree=150 and p=.70. When these parameter are set at other values, there appears to be diminishing returns in the prediction accuracy rates. For instance, when p=.7 and ntree=500, (the default setting), the accuracy rate of Class D declines from .9915 to .9910. Also, when ntree=100, Class A has a higher accuracy rate at p=.60 (.9974) then at p=.70 (.9968).
 
 
-**2. How I used cross validation -** I used the random forest cross validation function "rfcv" to perform a 4-fold cross validation on the the predictions of my random forest model. I set the parameter ntree=150 and initially set p=.10 and increased it by .10 until it was equal to .70. At each iteration, I observed a graph of the error rate and when p was equal to .70, the error rate was virtually equal to zero as shown in Figure 1.
+**2. How I used cross validation -** I used the random forest cross validation function **"rfcv"** to perform a 4-fold cross validation on the predictions of my random forest model. I set the parameter ntree=150 and initially set p=.10 and increased it by .10 until it was equal to .70. At each iteration, I observed a graph of the error rate and when p was equal to .70, the error rate was virtually equal to zero as shown in Figure 1.
 
 ```{r Cross Validation, echo=F}
 # Create Training and Test Sets
@@ -208,9 +208,9 @@ with(result, plot(n.var, error.cv, log="x", type="o", lwd=2,
 
 ```
 
-**3. What I think the expected error is -** I think the overall out-of-sample expected error rate is slightly higher than the biased in-sample expected error rate, but virtually zero (i.e., 0.61% vs 0.55%, respectively). Based on the Accuracy Tables below, the out-of-sample expected error rate (1 - the accuracy rate) is virtually zero at p=.70 and ntree=150 across all classes. This expected error rate is also depicted in Figure 1 above. Also note that Class D has the highest error rate (or lowest accuracy rate). 
+**3. What I think the expected error is -** I think the overall out-of-sample expected error rate is slightly higher than the biased in-sample expected error rate, but virtually zero (i.e., 0.0061 vs 0.0055, respectively). Based on the Accuracy Tables below, the out-of-sample expected error rate (1 - the accuracy rate) is virtually zero at p=.70 and ntree=150 across all classes. This expected error rate is also depicted in Figure 1 above. Also note that Class D has the highest error rate (or lowest accuracy rate). 
 
-#####--Accuracy Tables (Source: Confusion Matrix from the Testing/Out of Sampling Data)   
+#####Accuracy Tables (Source: Confusion Matrix from the Testing/Out of Sampling Data)   
 
 **ntree=100|Class A|Class B|Class C|Class D|Class E**    
   p=.50 |.9968       |.9880      |.9884      |.9872      |.9977         
