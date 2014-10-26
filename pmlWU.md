@@ -1,8 +1,9 @@
 ---
-title: "PML Course Project: Prediction Model"
+title: 'PML Course Project: Prediction Model Test'
 author: "cyberspacecpa"
 date: "Sunday, October 26, 2014"
-output: html_document
+output:
+  html_document: default
 ---
 
 **Problem:** One thing that people regularly do is to quantify how much of a particular activity they do, but they rarely quantify how well they do it. This project tries to quantify, or should I say classify, how well people do the activity of weight lifting. In essence, this is a machine learning classification problem (prediction of a discrete outcome), not a machine learning regression problem (prediction of a continuous outcome).
@@ -17,7 +18,7 @@ Six young health participants were asked to perform one set of 10 repetitions of
 
 Class A corresponds to the specified execution of the exercise, while the other 4 classes correspond to common mistakes. 
 
-**Project Goal:** To use data from the accelerometers on the belt, forearm, arm, and dumbell of the 6 partipants to build an optimal model that predicts the classification
+**Project Goal:** To use data from the accelerometers on the belt, forearm, arm, and dumbbell of the 6 partipants to build an optimal model that predicts the classification
 (A-E) of how well (i.e., correctly or incorrectly) the participants lift weights.
 
 **Project Stategy:** Build the model using the standard model building methodology
@@ -65,10 +66,10 @@ Although I used all the above features to build my model, only 7 are required to
 
 1. roll_ belt -- variable # 1     
 2. yaw_belt -- variable # 3    
-3. magnet_dumbell_z -- variable # 39    
+3. magnet_dumbbell_z -- variable # 39    
 4. pitch_forearm -- variable # 41    
 5. pitch_belt -- variable # 2    
-6. magnet_dumbell_y -- variable # 38    
+6. magnet_dumbbell_y -- variable # 38    
 7. roll-forearm -- variable # 40    
 
 
