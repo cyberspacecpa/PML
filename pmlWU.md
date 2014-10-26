@@ -1,7 +1,7 @@
 ---
 title: "PML Course Project: Prediction Model"
 author: "cyberspacecpa"
-date: "Monday, October 13, 2014"
+date: "Sunday, October 26, 2014"
 output: html_document
 ---
 
@@ -24,7 +24,7 @@ Class A corresponds to the specified execution of the exercise, while the other 
 
 **Project Tactics:** Execute the strategy by answering the following questions: 1. How I built the model? 2. How I used cross validation? 3. What do I think the expected error is? and 4. Why I made the choices I did? 
 
-**1. How I built the model - ** I used the standard model building methodology workflow:
+**1. How I built the model -** I used the standard model building methodology workflow:
 
 **Question  ->  Input Data  ->  Features  ->  Algorithm  ->  Parameters  ->  Evaluation**
 
@@ -93,7 +93,7 @@ Seventy percent of training data proved to be the most optimal; that is, when se
 **--Evaluation:** To test the robustness of the accuracy of the final random forest model's predictions, I manipulated both of the sensitive parameters: ntree and p. The results are shown in the Accuracy Tables below (see discussion on the expected error). The optimal level is when ntree=150 and p=.70. When these parameter are set at other values, there appears to be diminishing returns in the prediction accuracy rates. For instance, when p=.7 and ntree=500, (the default setting), the accuracy rate of Class D declines from .9915 to .9910. Also, when ntree=100, Class A has a higher accuracy rate at p=.60 (.9974) then at p=.70 (.9968).
 
 
-**2. How I used cross validation - ** I used the random forest cross validation function "rfcv" to perform a 4-fold cross validation on the the predictions of my random forest model. I set the parameter ntree=150 and initially set p=.10 and increased it by .10 until it was equal to .70. At each iteration, I observed a graph of the error rate and when p was equal to .70, the error rate was virtually equal to zero as shown in Figure 1.
+**2. How I used cross validation -** I used the random forest cross validation function "rfcv" to perform a 4-fold cross validation on the the predictions of my random forest model. I set the parameter ntree=150 and initially set p=.10 and increased it by .10 until it was equal to .70. At each iteration, I observed a graph of the error rate and when p was equal to .70, the error rate was virtually equal to zero as shown in Figure 1.
 
 ![plot of chunk Cross Validation](figure/Cross Validation.png) 
 
@@ -118,7 +118,7 @@ Seventy percent of training data proved to be the most optimal; that is, when se
    p=.70|.9992       |.9972      |.9936      |.9910      |.9971     
                       
 
-**4. Why I made the choices I did - ** I chose the randomForest model because I was looking for optimal speed and accuracy; it provided both. And because of consistency, I also chose a random forest cross validation function to evaluate a random forest model's predictions; which turned out to be perfect -- 20 for 20 or a "zero" error rate, as the cross validation graph depicted.
+**4. Why I made the choices I did -** I chose the randomForest model because I was looking for optimal speed and accuracy; it provided both. And because of consistency, I also chose a random forest cross validation function to evaluate a random forest model's predictions; which turned out to be perfect -- 20 for 20 or a "zero" error rate, as the cross validation graph depicted.
 
 #### Reference
 
