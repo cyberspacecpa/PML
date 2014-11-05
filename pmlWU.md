@@ -1,7 +1,7 @@
 ---
 title: 'PML Course Project: Prediction Model'
 author: "cyberspacecpa"
-date: "Sunday, October 26, 2014"
+date: "Monday, November 3, 2014"
 output: html_document
 ---
 
