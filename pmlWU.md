@@ -2,8 +2,7 @@
 title: 'PML Course Project: Prediction Model'
 author: "cyberspacecpa"
 date: "Sunday, October 26, 2014"
-output:
-  html_document: default
+output: html_document
 ---
 
 **Problem:** One thing that people regularly do is to quantify how much of a particular activity they do, but they rarely quantify how well they do it. This project tries to quantify, or should I say classify, how well people do the activity of weight lifting. In essence, this is a machine learning classification problem (prediction of a discrete outcome), not a machine learning regression problem (prediction of a continuous outcome).
@@ -100,7 +99,7 @@ Seventy percent of training data proved to be the most optimal; that is, when se
 
 **3. What I think the expected error is -** I think the overall out-of-sample expected error rate is slightly higher than the biased in-sample expected error rate, but virtually zero (i.e., 0.0061 vs 0.0055, respectively). Based on the Accuracy Tables below, the out-of-sample expected error rate (1 - the accuracy rate) is virtually zero at p=.70 and ntree=150 across all classes. This expected error rate is also depicted in Figure 1 above. Also note that Class D has the highest error rate (or lowest accuracy rate). 
 
-#####Accuracy Tables (Source: Confusion Matrix from the Testing/Out of Sampling Data)   
+##### Accuracy Tables (Source: Confusion Matrix from the Testing/Out of Sampling Data)   
 
 **ntree=100|Class A|Class B|Class C|Class D|Class E**    
   p=.50 |.9968       |.9880      |.9884      |.9872      |.9977         
@@ -119,8 +118,15 @@ Seventy percent of training data proved to be the most optimal; that is, when se
    p=.70|.9992       |.9972      |.9936      |.9910      |.9971     
                       
 
-**4. Why I made the choices I did -** I chose the randomForest model because I was looking for optimal speed and accuracy; it provided both. And because of consistency, I also chose a random forest cross validation function to evaluate a random forest model's predictions; which turned out to be perfect -- 20 for 20 or a "zero" error rate, as the cross validation graph depicted.
+**4. Why I made the choices I did -** I chose the randomForest model because I was looking for optimal speed and accuracy; it provided both. And because of consistency, I also chose a random forest cross validation function to evaluate a random forest model's predictions; which turned out to be perfect -- 20 for 20 or a "zero" error rate, as the cross validation graph depicted.    
 
+####  Predictions
+
+```
+##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
+##  B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B 
+## Levels: A B C D E
+```
 #### Reference
 
 Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013. 
