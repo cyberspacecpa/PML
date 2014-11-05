@@ -114,7 +114,7 @@ Although I used all the above features to build my model, only 7 are required to
 3. library(caret); function train, method=gbm (Generalized Boosting Method)
 4. library(RandomForest), function randomForest (Random Forest Method)
 
-My selection criteria were speed and accuracy. My strategy for testing the models was simple: used the least amount of data to fit or train the model and test it on the greatest amount of data available. Therefore, I initially set p=.10. The rpart (trees) results were completely different from the other models, so I eliminated it. The results of the gbm (boosting) method indicated that 150 was the optimal number for the ntree parameter. So I set p=.2 and ntree=150 and repeated the process. The rf method was too time consuming, so I eliminated it. I set p=.3 and ntree=150 and repeated the process. The predictions from the gbm model and the randomForest model  were the same but the gbm model took much more time than the randomForest model, so I eliminated it and selected the randForest model because of both speed and accuracy. Another reason I selected this model is because I could use a random forest cross validation function (rfcv) to validation a random forest model's predictions.
+My selection criteria were speed and accuracy. My strategy for testing the models was simple: used the least amount of data to fit or train the model and test it on the greatest amount of data available. Therefore, I initially set p=.10. The rpart (trees) results were completely different from the other models, so I eliminated it. The results of the gbm (boosting) method indicated that 150 was the optimal number for the ntree parameter. So I set p=.2 and ntree=150 and repeated the process. The rf method was too time consuming, so I eliminated it. I set p=.3 and ntree=150 and repeated the process. The predictions from the gbm model and the randomForest model  were the same but the gbm model took much more time than the randomForest model, so I eliminated it and selected the randomForest model because of both speed and accuracy. Another reason I selected this model is because I could use a random forest cross validation function (rfcv) to validation a random forest model's predictions.
 
 
 **--Parameters:** The parameters used in the final model are:
@@ -179,24 +179,16 @@ set.seed(1300)
 
 # Look at the Accuracy of the Predictions
 
-#table(pred, testing$classe)
-#print(apply(table(pred, testing$classe), 1, sum)) # Row Totals
-#print(apply(table(pred, testing$classe), 2, sum)) # Col Totals
-
 # Cross-Validate the Model Method 1
 
 #set.seed(8103)
 #predTrain <- predict(modFit, newdata=training)
 #print(confusionMatrix(predTrain, training$classe))
 
-
 #predTest <- predict(modFit, newdata=testing)
 #print(confusionMatrix(predTest, testing$classe))
 
 # Cross-Validate the Model Method 2
-
-#print("check test dim 01")
-#dim(testing)
 
 set.seed(6478)
 result <- rfcv(testing, testing$classe, cv.fold=4)
